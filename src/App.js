@@ -10,10 +10,12 @@ function App() {
       </div>
       <div className="row">
         <div className="col">
-          <Posts />
+          <h2>Sync Posts</h2>
+          <Posts posts={[1, 2, 3]} />
         </div>
         <div className="col">
-          <FetchedPosts />
+          <h2>Async Posts</h2>
+          <FetchedPosts posts={[]} />
         </div>
       </div>
     </div>
