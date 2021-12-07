@@ -3,6 +3,6 @@ const initialState = {
   fetchedPosts: [],
 };
 
-export const postsReducer = (state, action) => {
+export const postsReducer = (state = initialState, action) => {
   return state;
 };
