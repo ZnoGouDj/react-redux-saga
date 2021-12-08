@@ -6,10 +6,14 @@ import App from './App';
 import { rootReducer } from './redux/rootReducer';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
+import { forbiddenWordsMiddleware } from './redux/middleware';
 
 const store = createStore(
   rootReducer,
-  compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+  compose(
+    applyMiddleware(thunk, forbiddenWordsMiddleware),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
 );
 
 const app = (
